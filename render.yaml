@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: fcm-kmeans-segmentation
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn fcm_kmeans_django.wsgi:application
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fcm_kmeans_db
+          property: connectionString
+
+databases:
+  - name: fcm_kmeans_db
+    databaseName: fcm_kmeans
+    user: fcm_kmeans 

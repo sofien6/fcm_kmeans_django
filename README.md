@@ -1,6 +1,37 @@
-# Hybrid Image Segmentation using K-means and FCM
+# FCM-KMeans Image Segmentation App
 
-This Django-based web application provides image segmentation functionality using a hybrid approach that combines K-means and Fuzzy C-means (FCM) clustering algorithms.
+A Django web application that performs image segmentation using a hybrid approach combining K-means and Fuzzy C-means (FCM) algorithms.
+
+## Deployment on Render
+
+### Setup Instructions
+
+1. Create a new Web Service on Render
+2. Connect your GitHub repository
+3. Use the following settings:
+   - **Environment**: Python
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn [your_project_name].wsgi:application`
+   - **Python Version**: 3.10 or later
+
+### Environment Variables
+
+Add the following environment variables in the Render dashboard:
+- `DEBUG`: Set to `False` for production
+- `SECRET_KEY`: Your Django secret key
+- `ALLOWED_HOSTS`: Add your Render domain (e.g., `your-app-name.onrender.com`)
+- `DATABASE_URL`: Added automatically by Render if using their PostgreSQL service
+
+## Local Development
+
+1. Clone the repository
+2. Create a virtual environment: `python -m venv venv`
+3. Activate the virtual environment:
+   - Windows: `venv\Scripts\activate`
+   - Linux/Mac: `source venv/bin/activate`
+4. Install dependencies: `pip install -r requirements.txt`
+5. Run migrations: `python manage.py migrate`
+6. Start the server: `python manage.py runserver`
 
 ## Features
 
@@ -15,29 +46,6 @@ This Django-based web application provides image segmentation functionality usin
 - **Results Visualization:**
   - Side-by-side comparison of original and segmented images
   - Colored segment visualization
-
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository_url>
-   cd fcm_kmeans_django
-   ```
-
-2. Install the required packages:
-   ```
-   pip install django numpy scikit-learn scikit-fuzzy opencv-python pillow matplotlib
-   ```
-
-3. Run the Django development server:
-   ```
-   python manage.py runserver
-   ```
-
-4. Open your browser and navigate to:
-   ```
-   http://127.0.0.1:8000/
-   ```
 
 ## How It Works
 
