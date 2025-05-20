@@ -1,0 +1,45 @@
+INFO 2025-05-21 00:17:20,457 views Home page accessed
+INFO 2025-05-21 00:17:59,451 views Image upload received: 1600.jpg, size: 880061 bytes
+INFO 2025-05-21 00:17:59,460 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/1600_cf1jTbw.jpg
+INFO 2025-05-21 00:17:59,460 views Segmentation requested with method: hybrid, clusters: 3
+INFO 2025-05-21 00:17:59,461 segmentation_utils Starting image segmentation process with method: hybrid, clusters: 3
+INFO 2025-05-21 00:17:59,461 segmentation_utils Input image: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/1600_cf1jTbw.jpg
+INFO 2025-05-21 00:17:59,560 segmentation_utils Image preprocessed. Shape: (1000, 1000, 3)
+INFO 2025-05-21 00:17:59,561 segmentation_utils Starting hybrid segmentation with 3 clusters
+INFO 2025-05-21 00:17:59,563 segmentation_utils Starting K-means segmentation with 3 clusters
+INFO 2025-05-21 00:18:02,854 segmentation_utils K-means segmentation completed successfully
+INFO 2025-05-21 00:25:52,497 views Home page accessed
+INFO 2025-05-21 00:29:57,702 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-21 00:29:57,710 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire.png
+INFO 2025-05-21 00:29:57,711 views Segmentation requested with method: hybrid, clusters: 2
+INFO 2025-05-21 00:29:57,711 segmentation_utils Starting image segmentation process with method: hybrid, clusters: 2
+INFO 2025-05-21 00:29:57,711 segmentation_utils Input image: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire.png
+INFO 2025-05-21 00:29:57,744 segmentation_utils Image preprocessed. Shape: (377, 385, 3)
+INFO 2025-05-21 00:29:57,745 segmentation_utils Starting hybrid segmentation with 2 clusters
+INFO 2025-05-21 00:29:57,746 segmentation_utils Performing initial K-means segmentation in hybrid approach
+INFO 2025-05-21 00:29:57,746 segmentation_utils Starting K-means segmentation with 2 clusters
+INFO 2025-05-21 00:29:57,747 segmentation_utils Input image shape for K-means: (377, 385, 3)
+INFO 2025-05-21 00:29:57,747 segmentation_utils Reshaped data for K-means: (145145, 3)
+INFO 2025-05-21 00:29:57,747 segmentation_utils Initializing K-means with 2 clusters and random_state=42
+INFO 2025-05-21 00:29:57,749 segmentation_utils Fitting K-means model to image data...
+INFO 2025-05-21 00:29:58,702 segmentation_utils K-means segmentation completed in 0.95 seconds
+INFO 2025-05-21 00:29:58,702 segmentation_utils K-means centers: min=17.89, max=90.04, shape=(2, 3)
+INFO 2025-05-21 00:29:58,704 segmentation_utils K-means labels distribution: [np.int64(86321), np.int64(58824)]
+INFO 2025-05-21 00:30:00,044 segmentation_utils K-means initial segmentation saved to C:\Users\Click\Desktop\fcm_kmeans_django\media\results\KMeans_initial_20250521002958_e509821b.png
+INFO 2025-05-21 00:30:00,045 segmentation_utils Using K-means results as initialization for FCM refinement
+INFO 2025-05-21 00:30:02,923 segmentation_utils Starting FCM refinement in hybrid approach
+INFO 2025-05-21 00:30:03,532 segmentation_utils FCM refinement completed successfully
+INFO 2025-05-21 00:30:03,533 segmentation_utils Hybrid segmentation completed successfully
+INFO 2025-05-21 00:30:03,533 segmentation_utils Visualizing segmentation results for Hybrid
+INFO 2025-05-21 00:30:03,922 segmentation_utils Segmentation results saved to C:\Users\Click\Desktop\fcm_kmeans_django\media\results\Hybrid_20250521003003_629aebfa.png and C:\Users\Click\Desktop\fcm_kmeans_django\media\results\Hybrid_20250521003003_629aebfa_colored.png
+INFO 2025-05-21 00:30:03,923 segmentation_utils Segmentation process completed. Method: Hybrid
+INFO 2025-05-21 00:30:03,924 views Segmentation successful, redirecting to result page with filename: Hybrid_20250521003003_629aebfa.png
+INFO 2025-05-21 00:30:03,924 views K-means intermediate result saved: results/KMeans_initial_20250521002958_e509821b.png
+INFO 2025-05-21 00:30:03,945 views Result page accessed for file: Hybrid_20250521003003_629aebfa.png
+INFO 2025-05-21 00:30:03,949 views Including K-means result in template: /media/results/KMeans_initial_20250521002958_e509821b.png
+INFO 2025-05-21 00:32:31,852 views Result page accessed for file: Hybrid_20250521003003_629aebfa.png
+INFO 2025-05-21 00:32:31,862 views Including K-means result in template: /media/results/KMeans_initial_20250521002958_e509821b.png
+INFO 2025-05-21 00:32:34,360 views Result page accessed for file: Hybrid_20250521003003_629aebfa.png
+INFO 2025-05-21 00:32:34,363 views Including K-means result in template: /media/results/KMeans_initial_20250521002958_e509821b.png
+INFO 2025-05-21 00:40:28,871 views Result page accessed for file: Hybrid_20250521003003_629aebfa.png
+INFO 2025-05-21 00:40:28,886 views Including K-means result in template: /media/results/KMeans_initial_20250521002958_e509821b.png

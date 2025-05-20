@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% block title %}Home - Hybrid Image
+Segmentation{%endblock %} {% block extra_css %}
+<link rel="stylesheet" href="/static/css/style.css" />
+{% endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="mb-0">Image Segmentation</h4>
+      </div>
+      <div class="card-body">
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="alert alert-info">
+              <h5>Hybrid Image Segmentation</h5>
+              <p>
+                This application combines K-means and Fuzzy C-means (FCM)
+                clustering algorithms for improved image segmentation. Upload an
+                image to try it out!
+              </p>
+              <ul>
+                <li>
+                  <strong>K-means</strong>: Fast but deterministic clustering
+                </li>
+                <li>
+                  <strong>FCM (Fuzzy C-means)</strong>: Probabilistic fuzzy
+                  clustering
+                </li>
+                <li>
+                  <strong>Hybrid</strong>: Combines the speed of K-means with
+                  the refinement of FCM
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <form
+          action="{% url 'segment_image' %}"
+          method="POST"
+          enctype="multipart/form-data"
+          id="segmentation-form"
+        >
+          {% csrf_token %}
+          <div class="mb-4">
+            <label for="image" class="form-label">Select Image</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              class="form-control"
+              accept="image/*"
+              required
+            />
+            <div class="form-text">Supported formats: JPG, PNG, BMP</div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <label for="method" class="form-label">Segmentation Method</label>
+              <select name="method" id="method" class="form-select">
+                <option value="hybrid" selected>Hybrid (K-means + FCM)</option>
+                <option value="kmeans">K-means only</option>
+                <option value="fcm">FCM only</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="n_clusters" class="form-label"
+                >Number of Clusters</label
+              >
+              <input
+                type="number"
+                name="n_clusters"
+                id="n_clusters"
+                class="form-control"
+                min="2"
+                max="10"
+                value="5"
+                required
+              />
+              <div class="form-text">Range: 2-10</div>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Segment Image</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script src="/static/js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block title %}Segmentation Result{% endblock %} {%block extra_css %}
+<link rel="stylesheet" href="/static/css/style.css" />
+
+{% endblock %} {% block content %}
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h4 class="mb-0">Segmentation Results</h4>
+        <a href="{% url 'home' %}" class="btn btn-outline-primary btn-sm"
+          >Segment Another Image</a
+        >
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 text-center mb-4">
+            <h5>Comparison View (Original vs Segmented)</h5>
+            <div class="img-container">
+              <img
+                src="{{ result_image }}"
+                alt="Segmentation Result"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <h5>Colored Segments</h5>
+            <div class="img-container">
+              <img
+                src="{{ colored_image }}"
+                alt="Colored Segments"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+
+        {% if kmeans_image %}
+        <div class="row mt-4">
+          <div class="col-md-12 text-center mb-4">
+            <h5>K-means Intermediate Result</h5>
+            <div class="img-container">
+              <img
+                src="{{ kmeans_image }}"
+                alt="K-means Result"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <h5>K-means Colored Segments</h5>
+            <div class="img-container">
+              <img
+                src="{{ kmeans_colored_image }}"
+                alt="K-means Colored Segments"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <div class="alert alert-success">
+              <h5>Image Segmentation Details</h5>
+              <p>
+                The image has been segmented using our hybrid approach combining
+                K-means and FCM algorithms. The colored segments represent
+                different regions detected in the image by the algorithm.
+              </p>
+              {% if kmeans_image %}
+              <p>
+                <strong>Process Details:</strong> First, K-means clustering was
+                applied to create an initial segmentation. Then, Fuzzy C-means
+                (FCM) was used to refine the segmentation, resulting in the
+                final output. You can compare both results above to see how FCM
+                refinement improved the initial K-means segmentation.
+              </p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
+          <a href="{% url 'home' %}" class="btn btn-primary"
+            >Segment Another Image</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
