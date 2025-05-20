@@ -3,7 +3,7 @@ services:
     name: fcm-kmeans-segmentation
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn fcm_kmeans_django.wsgi:application
+    startCommand: gunicorn image_segmentation.wsgi:application
     envVars:
       - key: DEBUG
         value: False
