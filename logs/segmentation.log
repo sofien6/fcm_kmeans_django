@@ -569,3 +569,29 @@ INFO 2025-05-26 02:04:34,969 segmentation_utils Determining optimal number of cl
 INFO 2025-05-26 02:04:34,969 segmentation_utils Finding optimal k using improved Elbow method
 INFO 2025-05-26 02:04:36,435 segmentation_utils Elbow method suggests k=4
 INFO 2025-05-26 02:04:36,436 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 02:05:01,054 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 02:05:01,056 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 02:05:01,683 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 02:05:01,684 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 02:05:04,761 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 02:05:04,761 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 02:05:04,776 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 02:05:04,777 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 2, Variance: 4
+INFO 2025-05-26 02:05:04,777 segmentation_utils High disagreement between methods (variance: 2.24), using conservative approach
+INFO 2025-05-26 02:05:04,779 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 02:05:04,779 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=2, Variance=4
+INFO 2025-05-26 02:05:04,780 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 02:05:05,788 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 02:05:06,728 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 02:05:06,728 segmentation_utils K-means centroids shape: (4, 3)
+INFO 2025-05-26 02:05:06,730 segmentation_utils K-means segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 02:05:07,683 segmentation_utils Starting robust FCM segmentation with k=4 clusters
+INFO 2025-05-26 02:05:11,266 segmentation_utils FCM converged after 42 iterations
+INFO 2025-05-26 02:05:11,282 segmentation_utils Robust FCM segmentation completed with 4 clusters
+INFO 2025-05-26 02:05:11,282 segmentation_utils Membership matrix shape: (4, 251001)
+INFO 2025-05-26 02:05:11,282 segmentation_utils Final centroids shape: (4, 3)
+INFO 2025-05-26 02:05:11,284 segmentation_utils FCM centroids shape: (4, 3)
+INFO 2025-05-26 02:05:11,287 segmentation_utils FCM segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 02:05:14,127 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 02:05:14,271 views Automatic segmentation successful with optimal k=4 (processed in memory)
+INFO 2025-05-26 02:05:14,896 views Result page accessed
