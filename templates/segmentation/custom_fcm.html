@@ -1,0 +1,546 @@
+{% extends 'base.html' %} {% block title %}Custom FCM with Predefined
+Centroids{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="/static/css/style.css" />
+<style>
+  .centroid-input {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  .color-preview {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .result-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: none;
+  }
+  .loading {
+    text-align: center;
+    padding: 20px;
+    display: none;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="mb-0">
+          <i class="fas fa-palette"></i> Custom FCM with Predefined Centroids
+        </h4>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-info">
+          <h5><i class="fas fa-lightbulb"></i> How it works:</h5>
+          <ol>
+            <li>
+              <strong>Upload your image</strong> - Any RGB or grayscale image
+            </li>
+            <li>
+              <strong>Define centroids</strong> - Specify RGB color values for
+              each cluster center
+            </li>
+            <li>
+              <strong>Run FCM</strong> - The algorithm will refine your
+              centroids and segment the image
+            </li>
+            <li>
+              <strong>Analyze results</strong> - See how your centroids evolved
+              and view membership uncertainty
+            </li>
+          </ol>
+        </div>
+
+        <form id="custom-fcm-form" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <!-- Image Upload -->
+          <div class="mb-4">
+            <label for="image" class="form-label">
+              <i class="fas fa-upload"></i> Select Image
+            </label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              class="form-control"
+              accept="image/*"
+              required
+            />
+            <div class="form-text">
+              <i class="fas fa-info-circle"></i> Supported formats: JPG, PNG,
+              BMP
+            </div>
+          </div>
+
+          <!-- Centroids Definition -->
+          <div class="mb-4">
+            <label class="form-label">
+              <i class="fas fa-crosshairs"></i> Define Centroids (RGB Values)
+            </label>
+            <div id="centroids-container">
+              <!-- Default centroids -->
+              <div class="centroid-input">
+                <label>Centroid 1:</label>
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="R"
+                  min="0"
+                  max="255"
+                  value="255"
+                  data-component="r"
+                  data-centroid="0"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="G"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="g"
+                  data-centroid="0"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="B"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="b"
+                  data-centroid="0"
+                />
+                <div
+                  class="color-preview"
+                  data-centroid="0"
+                  style="background-color: rgb(255, 0, 0)"
+                ></div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger ms-2 remove-centroid"
+                >
+                  Remove
+                </button>
+              </div>
+
+              <div class="centroid-input">
+                <label>Centroid 2:</label>
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="R"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="r"
+                  data-centroid="1"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="G"
+                  min="0"
+                  max="255"
+                  value="255"
+                  data-component="g"
+                  data-centroid="1"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="B"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="b"
+                  data-centroid="1"
+                />
+                <div
+                  class="color-preview"
+                  data-centroid="1"
+                  style="background-color: rgb(0, 255, 0)"
+                ></div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger ms-2 remove-centroid"
+                >
+                  Remove
+                </button>
+              </div>
+
+              <div class="centroid-input">
+                <label>Centroid 3:</label>
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="R"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="r"
+                  data-centroid="2"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="G"
+                  min="0"
+                  max="255"
+                  value="0"
+                  data-component="g"
+                  data-centroid="2"
+                />
+                <input
+                  type="number"
+                  class="form-control d-inline-block"
+                  style="width: 80px"
+                  placeholder="B"
+                  min="0"
+                  max="255"
+                  value="255"
+                  data-component="b"
+                  data-centroid="2"
+                />
+                <div
+                  class="color-preview"
+                  data-centroid="2"
+                  style="background-color: rgb(0, 0, 255)"
+                ></div>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger ms-2 remove-centroid"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              id="add-centroid"
+              class="btn btn-sm btn-success mt-2"
+            >
+              <i class="fas fa-plus"></i> Add Centroid
+            </button>
+
+            <div class="form-text">
+              <i class="fas fa-info-circle"></i> Define RGB color values (0-255)
+              for each cluster center. The FCM algorithm will refine these
+              initial positions.
+            </div>
+          </div>
+
+          <!-- Preset Buttons -->
+          <div class="mb-4">
+            <label class="form-label">Quick Presets:</label><br />
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary me-2"
+              onclick="setPreset('rgb')"
+            >
+              RGB Colors
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary me-2"
+              onclick="setPreset('grayscale')"
+            >
+              Grayscale
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-success me-2"
+              onclick="setPreset('nature')"
+            >
+              Nature Colors
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-info"
+              onclick="setPreset('satellite')"
+            >
+              Satellite Imagery
+            </button>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fas fa-play"></i> Run Custom FCM Segmentation
+          </button>
+        </form>
+
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Processing...</span>
+          </div>
+          <p class="mt-2">Processing image with custom FCM...</p>
+        </div>
+
+        <!-- Results Container -->
+        <div class="result-container" id="results">
+          <h5><i class="fas fa-chart-line"></i> FCM Results</h5>
+          <div id="result-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let centroidCounter = 3;
+
+  // Update color preview when RGB values change
+  document.addEventListener("input", function (e) {
+    if (e.target.dataset.component) {
+      updateColorPreview(e.target.dataset.centroid);
+    }
+  });
+
+  function updateColorPreview(centroidIndex) {
+    const r =
+      document.querySelector(
+        `input[data-component="r"][data-centroid="${centroidIndex}"]`
+      ).value || 0;
+    const g =
+      document.querySelector(
+        `input[data-component="g"][data-centroid="${centroidIndex}"]`
+      ).value || 0;
+    const b =
+      document.querySelector(
+        `input[data-component="b"][data-centroid="${centroidIndex}"]`
+      ).value || 0;
+
+    const preview = document.querySelector(
+      `div[data-centroid="${centroidIndex}"]`
+    );
+    if (preview) {
+      preview.style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+  }
+
+  // Add new centroid
+  document
+    .getElementById("add-centroid")
+    .addEventListener("click", function () {
+      const container = document.getElementById("centroids-container");
+      const newCentroid = document.createElement("div");
+      newCentroid.className = "centroid-input";
+      newCentroid.innerHTML = `
+    <label>Centroid ${centroidCounter + 1}:</label>
+    <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+           placeholder="R" min="0" max="255" value="128" data-component="r" data-centroid="${centroidCounter}">
+    <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+           placeholder="G" min="0" max="255" value="128" data-component="g" data-centroid="${centroidCounter}">
+    <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+           placeholder="B" min="0" max="255" value="128" data-component="b" data-centroid="${centroidCounter}">
+    <div class="color-preview" data-centroid="${centroidCounter}" style="background-color: rgb(128,128,128);"></div>
+    <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Remove</button>
+  `;
+      container.appendChild(newCentroid);
+      centroidCounter++;
+    });
+
+  // Remove centroid
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-centroid")) {
+      const centroidInputs = document.querySelectorAll(".centroid-input");
+      if (centroidInputs.length > 2) {
+        // Keep at least 2 centroids
+        e.target.parentElement.remove();
+      } else {
+        alert("You need at least 2 centroids for clustering.");
+      }
+    }
+  });
+
+  // Preset functions
+  function setPreset(type) {
+    const container = document.getElementById("centroids-container");
+    container.innerHTML = "";
+    centroidCounter = 0;
+
+    let presets = [];
+    switch (type) {
+      case "rgb":
+        presets = [
+          [255, 0, 0],
+          [0, 255, 0],
+          [0, 0, 255],
+        ];
+        break;
+      case "grayscale":
+        presets = [
+          [64, 64, 64],
+          [128, 128, 128],
+          [192, 192, 192],
+          [255, 255, 255],
+        ];
+        break;
+      case "nature":
+        presets = [
+          [139, 69, 19],
+          [34, 139, 34],
+          [135, 206, 235],
+          [255, 255, 255],
+        ];
+        break;
+      case "satellite":
+        presets = [
+          [0, 100, 0],
+          [139, 69, 19],
+          [34, 139, 34],
+          [169, 169, 169],
+        ];
+        break;
+    }
+
+    presets.forEach((preset, index) => {
+      const newCentroid = document.createElement("div");
+      newCentroid.className = "centroid-input";
+      newCentroid.innerHTML = `
+      <label>Centroid ${index + 1}:</label>
+      <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+             placeholder="R" min="0" max="255" value="${
+               preset[0]
+             }" data-component="r" data-centroid="${index}">
+      <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+             placeholder="G" min="0" max="255" value="${
+               preset[1]
+             }" data-component="g" data-centroid="${index}">
+      <input type="number" class="form-control d-inline-block" style="width: 80px;" 
+             placeholder="B" min="0" max="255" value="${
+               preset[2]
+             }" data-component="b" data-centroid="${index}">
+      <div class="color-preview" data-centroid="${index}" style="background-color: rgb(${
+        preset[0]
+      },${preset[1]},${preset[2]});"></div>
+      <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Remove</button>
+    `;
+      container.appendChild(newCentroid);
+      centroidCounter++;
+    });
+  }
+
+  // Form submission
+  document
+    .getElementById("custom-fcm-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Collect centroids
+      const centroids = [];
+      const centroidInputs = document.querySelectorAll(".centroid-input");
+
+      centroidInputs.forEach((input, index) => {
+        const r = input.querySelector('input[data-component="r"]').value;
+        const g = input.querySelector('input[data-component="g"]').value;
+        const b = input.querySelector('input[data-component="b"]').value;
+        centroids.push([parseInt(r), parseInt(g), parseInt(b)]);
+      });
+
+      // Prepare form data
+      const formData = new FormData();
+      formData.append("image", document.getElementById("image").files[0]);
+      formData.append("centroids", JSON.stringify(centroids));
+      formData.append(
+        "csrfmiddlewaretoken",
+        document.querySelector("[name=csrfmiddlewaretoken]").value
+      );
+
+      // Show loading
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("results").style.display = "none";
+
+      // Submit
+      fetch("/custom-fcm/", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("loading").style.display = "none";
+
+          if (data.success) {
+            displayResults(data);
+          } else {
+            alert("Error: " + data.error);
+          }
+        })
+        .catch((error) => {
+          document.getElementById("loading").style.display = "none";
+          alert("Error: " + error);
+        });
+    });
+
+  function displayResults(data) {
+    const resultContent = document.getElementById("result-content");
+
+    let movementsHtml = "";
+    data.movements.forEach((movement) => {
+      movementsHtml += `
+      <div class="col-md-6 mb-2">
+        <div class="card border-0 bg-light">
+          <div class="card-body p-2">
+            <small>
+              <strong>Centroid ${movement.centroid}:</strong><br>
+              Original: [${movement.original
+                .map((v) => v.toFixed(0))
+                .join(", ")}]<br>
+              Refined: [${movement.refined
+                .map((v) => v.toFixed(1))
+                .join(", ")}]<br>
+              <span class="text-success">Movement: ${movement.movement.toFixed(
+                2
+              )} pixels</span>
+            </small>
+          </div>
+        </div>
+      </div>
+    `;
+    });
+
+    resultContent.innerHTML = `
+    <div class="text-center mb-3">
+      <img src="data:image/png;base64,${data.result_image}" class="img-fluid" style="max-width: 100%; border: 2px solid #dee2e6; border-radius: 8px;">
+    </div>
+    
+    <div class="alert alert-success">
+      <h6><i class="fas fa-check-circle"></i> Custom FCM Segmentation Complete</h6>
+      <p>Successfully segmented image with ${data.k} custom centroids.</p>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <h6><i class="fas fa-arrows-alt"></i> Centroid Evolution</h6>
+        <div class="row">
+          ${movementsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+
+    document.getElementById("results").style.display = "block";
+  }
+</script>
+{% endblock %}

@@ -92,3 +92,480 @@ INFO 2025-05-21 00:43:06,326 views Segmentation successful, redirecting to resul
 INFO 2025-05-21 00:43:06,330 views K-means intermediate result saved: results/KMeans_initial_20250521004300_041b1b13.png
 INFO 2025-05-21 00:43:06,342 views Result page accessed for file: Hybrid_20250521004305_82aa52bc.png
 INFO 2025-05-21 00:43:06,347 views Including K-means result in template: /media/results/KMeans_initial_20250521004300_041b1b13.png
+INFO 2025-05-25 02:48:42,787 views Home page accessed
+INFO 2025-05-25 03:01:26,481 views Home page accessed
+INFO 2025-05-25 03:06:00,655 views Home page accessed
+INFO 2025-05-25 03:06:17,832 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-25 03:06:17,841 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire.png
+INFO 2025-05-25 03:06:17,842 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:06:17,842 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:06:17,957 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-25 03:06:17,959 segmentation_utils Determining optimal number of clusters automatically
+INFO 2025-05-25 03:06:17,960 segmentation_utils Finding optimal k using Elbow method
+INFO 2025-05-25 03:06:20,890 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-25 03:06:20,891 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-25 03:06:50,805 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-25 03:06:50,806 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-25 03:06:50,806 segmentation_utils Elbow method suggested: 4, Silhouette method suggested: 2
+INFO 2025-05-25 03:06:50,806 segmentation_utils Optimal k determined: 2
+INFO 2025-05-25 03:06:54,378 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-25 03:06:54,753 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-25 03:06:55,907 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-25 03:06:59,859 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-25 03:07:01,298 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-25 03:07:01,317 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-25 03:07:02,044 views Result page accessed
+INFO 2025-05-25 03:08:16,035 views Result page accessed
+INFO 2025-05-25 03:08:34,865 views Result page accessed
+INFO 2025-05-25 03:16:28,194 views Home page accessed
+INFO 2025-05-25 03:17:08,203 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-25 03:17:08,206 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages.jpg
+INFO 2025-05-25 03:17:08,207 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:17:08,208 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:17:08,295 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-25 03:17:08,296 segmentation_utils Determining optimal number of clusters automatically
+INFO 2025-05-25 03:17:08,297 segmentation_utils Finding optimal k using Elbow method
+INFO 2025-05-25 03:17:10,012 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-25 03:17:10,013 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-25 03:17:34,437 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-25 03:17:34,439 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-25 03:17:34,439 segmentation_utils Elbow method suggested: 4, Silhouette method suggested: 2
+INFO 2025-05-25 03:17:34,440 segmentation_utils Optimal k determined: 2
+INFO 2025-05-25 03:17:35,394 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-25 03:17:35,873 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-25 03:17:36,737 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-25 03:17:47,599 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-25 03:17:50,496 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-25 03:17:50,589 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-25 03:17:51,080 views Result page accessed
+INFO 2025-05-25 03:19:46,203 views Image upload received: image 2.png, size: 193937 bytes
+INFO 2025-05-25 03:19:46,209 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image 2.png
+INFO 2025-05-25 03:19:46,210 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:19:46,211 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-25 03:19:46,234 segmentation_utils Image loaded. Shape: (328, 240, 3), Grayscale: False
+INFO 2025-05-25 03:19:46,234 segmentation_utils Determining optimal number of clusters automatically
+INFO 2025-05-25 03:19:46,235 segmentation_utils Finding optimal k using Elbow method
+INFO 2025-05-25 03:19:47,295 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-25 03:19:47,296 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-25 03:20:09,946 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-25 03:20:09,947 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-25 03:20:09,948 segmentation_utils Elbow method suggested: 4, Silhouette method suggested: 2
+INFO 2025-05-25 03:20:09,949 segmentation_utils Optimal k determined: 2
+INFO 2025-05-25 03:20:10,673 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-25 03:20:10,808 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-25 03:20:11,410 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-25 03:20:12,473 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-25 03:20:14,732 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-25 03:20:14,835 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-25 03:20:15,185 views Result page accessed
+INFO 2025-05-26 00:10:16,790 views Home page accessed
+INFO 2025-05-26 00:37:27,699 views Home page accessed
+INFO 2025-05-26 00:37:34,992 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 00:37:34,998 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire_STuqu4W.png
+INFO 2025-05-26 00:37:34,998 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:37:34,998 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:37:35,085 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 00:37:35,086 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:37:35,086 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:37:36,139 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:37:36,139 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:38:01,613 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 00:38:01,615 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 00:38:02,469 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 00:38:02,470 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 00:38:05,432 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 00:38:05,432 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 00:38:05,441 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 00:38:05,442 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 2, Variance: 3
+INFO 2025-05-26 00:38:05,442 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-26 00:38:05,443 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=2, Variance=3
+INFO 2025-05-26 00:38:05,443 segmentation_utils Optimal k determined: 2
+INFO 2025-05-26 00:38:07,739 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-26 00:38:08,031 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-26 00:38:08,694 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-26 00:38:12,002 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-26 00:38:14,598 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 00:38:14,677 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-26 00:43:32,807 views Home page accessed
+INFO 2025-05-26 00:43:41,340 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 00:43:41,345 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire_Swwh8m9.png
+INFO 2025-05-26 00:43:41,345 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:43:41,346 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:43:41,385 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 00:43:41,385 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:43:41,386 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:43:43,019 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:43:43,019 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:44:10,109 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 00:44:10,110 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 00:44:10,662 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 00:44:10,663 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 00:44:13,708 segmentation_utils Gap statistic suggests k=7
+INFO 2025-05-26 00:44:13,710 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 00:44:13,720 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 00:44:13,721 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 7, Variance: 3
+INFO 2025-05-26 00:44:13,722 segmentation_utils High disagreement between methods (variance: 3.44), using conservative approach
+INFO 2025-05-26 00:44:13,723 segmentation_utils Final optimal k determined: 3
+INFO 2025-05-26 00:44:13,724 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=7, Variance=3
+INFO 2025-05-26 00:44:13,724 segmentation_utils Optimal k determined: 3
+INFO 2025-05-26 00:44:15,156 segmentation_utils Starting K-means segmentation with k=3 clusters
+INFO 2025-05-26 00:44:15,694 segmentation_utils K-means segmentation completed with 3 clusters
+INFO 2025-05-26 00:44:16,498 segmentation_utils Starting FCM segmentation with k=3 clusters
+INFO 2025-05-26 00:44:20,813 segmentation_utils FCM segmentation completed with 3 clusters
+INFO 2025-05-26 00:44:23,658 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 00:44:23,731 views Automatic segmentation successful with optimal k=3
+INFO 2025-05-26 00:44:24,448 views Result page accessed
+INFO 2025-05-26 00:45:04,823 views Home page accessed
+INFO 2025-05-26 00:47:40,583 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 00:47:40,589 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire_3zAsFRk.png
+INFO 2025-05-26 00:47:40,590 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:47:40,590 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:47:40,622 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 00:47:40,623 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:47:40,623 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:47:41,617 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:47:41,618 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:48:06,198 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 00:48:06,199 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 00:48:07,012 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 00:48:07,013 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 00:48:10,283 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 00:48:10,284 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 00:48:10,293 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 00:48:10,294 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 2, Variance: 3
+INFO 2025-05-26 00:48:10,294 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-26 00:48:10,295 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=2, Variance=3
+INFO 2025-05-26 00:48:10,295 segmentation_utils Optimal k determined: 2
+INFO 2025-05-26 00:48:11,373 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-26 00:48:11,608 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-26 00:48:12,243 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-26 00:48:15,267 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-26 00:48:17,848 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 00:48:17,988 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-26 00:48:18,569 views Result page accessed
+INFO 2025-05-26 00:50:04,595 views Home page accessed
+INFO 2025-05-26 00:50:59,665 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 00:50:59,670 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_M00PIBY.jpg
+INFO 2025-05-26 00:50:59,671 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:50:59,672 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:50:59,696 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 00:50:59,697 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:50:59,698 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:51:00,418 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:51:00,419 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:51:25,083 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 00:51:25,084 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 00:51:25,717 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 00:51:25,717 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 00:51:28,479 segmentation_utils Gap statistic suggests k=7
+INFO 2025-05-26 00:51:28,479 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 00:51:28,495 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 00:51:28,495 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 7, Variance: 4
+INFO 2025-05-26 00:51:28,496 segmentation_utils High disagreement between methods (variance: 3.04), using conservative approach
+INFO 2025-05-26 00:51:28,497 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 00:51:28,498 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=7, Variance=4
+INFO 2025-05-26 00:51:28,498 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 00:51:29,533 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 00:51:30,369 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 00:51:31,031 segmentation_utils Starting FCM segmentation with k=4 clusters
+INFO 2025-05-26 00:51:41,585 segmentation_utils FCM segmentation completed with 4 clusters
+INFO 2025-05-26 00:51:44,245 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 00:51:44,368 views Automatic segmentation successful with optimal k=4
+INFO 2025-05-26 00:51:44,922 views Result page accessed
+INFO 2025-05-26 00:54:21,926 views Home page accessed
+INFO 2025-05-26 00:54:51,953 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 00:54:51,960 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_oVUTqLY.jpg
+INFO 2025-05-26 00:54:51,961 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:54:51,965 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:54:51,990 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 00:54:51,993 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:54:51,995 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:54:53,067 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:54:53,067 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:55:19,523 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 00:55:19,524 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 00:55:20,202 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 00:55:20,203 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 00:55:24,165 segmentation_utils Gap statistic suggests k=7
+INFO 2025-05-26 00:55:24,165 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 00:55:24,179 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 00:55:24,180 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 7, Variance: 4
+INFO 2025-05-26 00:55:24,182 segmentation_utils High disagreement between methods (variance: 3.04), using conservative approach
+INFO 2025-05-26 00:55:24,183 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 00:55:24,184 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=7, Variance=4
+INFO 2025-05-26 00:55:24,184 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 00:56:48,947 views Home page accessed
+INFO 2025-05-26 00:56:58,542 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 00:56:58,546 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_Kbxfp0O.jpg
+INFO 2025-05-26 00:56:58,546 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:56:58,547 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:56:58,577 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 00:56:58,578 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:56:58,578 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:56:59,932 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 00:56:59,933 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 00:57:46,167 views Redirect to home page - not a valid POST request with image
+INFO 2025-05-26 00:57:46,182 views Home page accessed
+INFO 2025-05-26 00:57:53,390 views Image upload received: FalseColorImages.jpg, size: 52398 bytes
+INFO 2025-05-26 00:57:53,395 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/FalseColorImages.jpg
+INFO 2025-05-26 00:57:53,396 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:57:53,397 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 00:57:53,426 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 00:57:53,427 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 00:57:53,427 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 00:57:55,265 segmentation_utils Elbow method suggests k=3
+INFO 2025-05-26 00:57:55,266 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:08:35,895 views Home page accessed
+INFO 2025-05-26 01:08:52,055 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 01:08:52,061 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_2kejaAp.jpg
+INFO 2025-05-26 01:08:52,062 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:08:52,062 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:08:52,095 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 01:08:52,097 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:08:52,098 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:08:53,273 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:08:53,273 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:09:22,364 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:09:22,366 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:09:23,224 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 01:09:23,225 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:09:26,624 segmentation_utils Gap statistic suggests k=7
+INFO 2025-05-26 01:09:26,624 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:09:26,642 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 01:09:26,643 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 7, Variance: 4
+INFO 2025-05-26 01:09:26,643 segmentation_utils High disagreement between methods (variance: 3.04), using conservative approach
+INFO 2025-05-26 01:09:26,645 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 01:09:26,645 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=7, Variance=4
+INFO 2025-05-26 01:09:26,646 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 01:09:28,095 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 01:09:29,323 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 01:09:30,735 segmentation_utils Starting FCM segmentation with k=4 clusters
+INFO 2025-05-26 01:09:42,373 segmentation_utils FCM segmentation completed with 4 clusters
+ERROR 2025-05-26 01:09:42,614 views Error during automatic segmentation: shape mismatch: value array of shape (4,) could not be broadcast to indexing result of shape (87490,3)
+INFO 2025-05-26 01:09:42,628 views Home page accessed
+INFO 2025-05-26 01:10:02,771 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 01:10:02,776 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_yZDu8Xk.jpg
+INFO 2025-05-26 01:10:02,777 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:10:02,777 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:10:02,800 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 01:10:02,800 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:10:02,801 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:10:03,445 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:10:03,445 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:10:27,849 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:10:27,850 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:10:28,429 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 01:10:28,430 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:10:31,417 segmentation_utils Gap statistic suggests k=7
+INFO 2025-05-26 01:10:31,418 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:10:31,432 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 01:10:31,432 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 7, Variance: 4
+INFO 2025-05-26 01:10:31,433 segmentation_utils High disagreement between methods (variance: 3.04), using conservative approach
+INFO 2025-05-26 01:10:31,433 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 01:10:31,434 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=7, Variance=4
+INFO 2025-05-26 01:10:31,434 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 01:10:32,510 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 01:10:33,347 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 01:10:34,190 segmentation_utils Starting FCM segmentation with k=4 clusters
+INFO 2025-05-26 01:10:45,716 segmentation_utils FCM segmentation completed with 4 clusters
+ERROR 2025-05-26 01:10:45,999 views Error during automatic segmentation: shape mismatch: value array of shape (4,) could not be broadcast to indexing result of shape (87490,3)
+INFO 2025-05-26 01:10:46,010 views Home page accessed
+INFO 2025-05-26 01:13:02,630 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:13:02,640 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 01:13:02,641 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:13:02,642 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:13:03,714 segmentation_utils Elbow method suggests k=3
+INFO 2025-05-26 01:13:03,715 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:13:28,705 segmentation_utils Silhouette analysis suggests k=3
+INFO 2025-05-26 01:13:28,706 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:13:29,509 segmentation_utils Calinski-Harabasz index suggests k=3
+INFO 2025-05-26 01:13:29,510 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:13:34,891 segmentation_utils Gap statistic suggests k=5
+INFO 2025-05-26 01:13:34,891 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:13:34,907 segmentation_utils Variance analysis suggests k=6 (variance: 2759.04)
+INFO 2025-05-26 01:13:34,907 segmentation_utils Method suggestions - Elbow: 3, Silhouette: 3, Calinski-Harabasz: 3, Gap: 5, Variance: 6
+INFO 2025-05-26 01:13:34,908 segmentation_utils Final optimal k determined: 3
+INFO 2025-05-26 01:13:34,908 segmentation_utils Method consensus: Elbow=3, Silhouette=3, Calinski=3, Gap=5, Variance=6
+INFO 2025-05-26 01:13:34,910 segmentation_utils Optimal k determined: 3
+INFO 2025-05-26 01:13:36,918 segmentation_utils Starting K-means segmentation with k=3 clusters
+INFO 2025-05-26 01:13:38,085 segmentation_utils K-means segmentation completed with 3 clusters
+INFO 2025-05-26 01:13:38,086 segmentation_utils K-means centroids shape: (3, 3)
+INFO 2025-05-26 01:13:38,088 segmentation_utils K-means segmented image unique values: [0 1 2]
+INFO 2025-05-26 01:13:39,348 segmentation_utils Starting FCM segmentation with k=3 clusters
+WARNING 2025-05-26 01:13:39,348 segmentation_utils skfuzzy not available, using simple FCM alternative
+INFO 2025-05-26 01:13:39,961 segmentation_utils Simple FCM alternative completed with 3 clusters
+INFO 2025-05-26 01:13:39,964 segmentation_utils FCM centroids shape: (3, 3)
+INFO 2025-05-26 01:13:39,967 segmentation_utils FCM segmented image unique values: [0 1 2]
+INFO 2025-05-26 01:13:44,269 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 01:15:24,297 views Home page accessed
+INFO 2025-05-26 01:15:29,675 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 01:15:29,679 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_PmbKrDk.jpg
+INFO 2025-05-26 01:15:29,679 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:15:29,679 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:15:29,709 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 01:15:29,710 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:15:29,710 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:15:30,968 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:15:30,968 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:15:56,110 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:15:56,110 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:15:56,638 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 01:15:56,638 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:15:59,633 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 01:15:59,633 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:15:59,648 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 01:15:59,648 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 2, Variance: 4
+INFO 2025-05-26 01:15:59,649 segmentation_utils High disagreement between methods (variance: 2.24), using conservative approach
+INFO 2025-05-26 01:15:59,650 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 01:15:59,650 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=2, Variance=4
+INFO 2025-05-26 01:15:59,650 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 01:16:00,852 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 01:16:01,944 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 01:16:01,946 segmentation_utils K-means centroids shape: (4, 3)
+INFO 2025-05-26 01:16:01,949 segmentation_utils K-means segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 01:16:02,932 segmentation_utils Starting FCM segmentation with k=4 clusters
+WARNING 2025-05-26 01:16:02,933 segmentation_utils skfuzzy not available, using simple FCM alternative
+INFO 2025-05-26 01:16:04,323 segmentation_utils Simple FCM alternative completed with 4 clusters
+INFO 2025-05-26 01:16:04,325 segmentation_utils FCM centroids shape: (4, 3)
+INFO 2025-05-26 01:16:04,328 segmentation_utils FCM segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 01:16:07,649 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 01:16:07,776 views Automatic segmentation successful with optimal k=4
+INFO 2025-05-26 01:16:08,411 views Result page accessed
+INFO 2025-05-26 01:17:34,446 views Home page accessed
+INFO 2025-05-26 01:17:41,637 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 01:17:41,642 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/NaturalColorImages_X3gWeLF.jpg
+INFO 2025-05-26 01:17:41,642 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:17:41,643 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:17:41,671 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 01:17:41,671 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:17:41,672 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:17:42,937 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:17:42,937 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:18:07,007 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:18:07,008 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:18:07,790 segmentation_utils Calinski-Harabasz index suggests k=6
+INFO 2025-05-26 01:18:07,791 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:18:11,031 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 01:18:11,033 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:18:11,050 segmentation_utils Variance analysis suggests k=4 (variance: 1887.55)
+INFO 2025-05-26 01:18:11,051 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 6, Gap: 2, Variance: 4
+INFO 2025-05-26 01:18:11,051 segmentation_utils High disagreement between methods (variance: 2.24), using conservative approach
+INFO 2025-05-26 01:18:11,052 segmentation_utils Final optimal k determined: 4
+INFO 2025-05-26 01:18:11,053 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=6, Gap=2, Variance=4
+INFO 2025-05-26 01:18:11,055 segmentation_utils Optimal k determined: 4
+INFO 2025-05-26 01:18:12,330 segmentation_utils Starting K-means segmentation with k=4 clusters
+INFO 2025-05-26 01:18:13,359 segmentation_utils K-means segmentation completed with 4 clusters
+INFO 2025-05-26 01:18:13,359 segmentation_utils K-means centroids shape: (4, 3)
+INFO 2025-05-26 01:18:13,362 segmentation_utils K-means segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 01:18:14,216 segmentation_utils Starting FCM segmentation with k=4 clusters
+INFO 2025-05-26 01:18:24,901 segmentation_utils FCM segmentation completed with 4 clusters
+INFO 2025-05-26 01:18:24,904 segmentation_utils FCM centroids shape: (3, 4)
+INFO 2025-05-26 01:18:24,906 segmentation_utils FCM segmented image unique values: [0 1 2 3]
+INFO 2025-05-26 01:18:27,929 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 01:18:28,065 views Automatic segmentation successful with optimal k=4
+INFO 2025-05-26 01:18:28,728 views Result page accessed
+INFO 2025-05-26 01:23:41,211 views Home page accessed
+INFO 2025-05-26 01:25:25,513 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 01:25:25,518 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire_wSyTO27.png
+INFO 2025-05-26 01:25:25,519 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:25:25,519 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:25:25,548 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 01:25:25,548 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:25:25,548 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:25:26,212 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:25:26,213 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:25:53,701 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:25:53,705 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:25:54,540 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 01:25:54,541 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:25:58,051 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 01:25:58,051 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:25:58,059 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 01:25:58,059 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 2, Variance: 3
+INFO 2025-05-26 01:25:58,060 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-26 01:25:58,061 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=2, Variance=3
+INFO 2025-05-26 01:25:58,063 segmentation_utils Optimal k determined: 2
+INFO 2025-05-26 01:29:46,936 views Redirect to home page - not a valid POST request with image
+INFO 2025-05-26 01:29:46,949 views Home page accessed
+INFO 2025-05-26 01:29:59,043 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 01:29:59,049 views Image saved to: C:\Users\Click\Desktop\fcm_kmeans_django\media\uploads/image satellitaire_qh1Kh5X.png
+INFO 2025-05-26 01:29:59,049 views Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:29:59,050 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 01:29:59,084 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 01:29:59,085 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 01:29:59,086 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 01:30:00,737 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 01:30:00,737 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 01:30:26,045 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 01:30:26,046 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 01:30:26,688 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 01:30:26,688 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 01:30:29,699 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 01:30:29,699 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 01:30:29,708 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 01:30:29,709 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 2, Variance: 3
+INFO 2025-05-26 01:30:29,710 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-26 01:30:29,711 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=2, Variance=3
+INFO 2025-05-26 01:30:29,711 segmentation_utils Optimal k determined: 2
+INFO 2025-05-26 01:30:30,812 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-26 01:30:31,098 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-26 01:30:31,098 segmentation_utils K-means centroids shape: (2, 3)
+INFO 2025-05-26 01:30:31,099 segmentation_utils K-means segmented image unique values: [0 1]
+INFO 2025-05-26 01:30:32,091 segmentation_utils Starting FCM segmentation with k=2 clusters
+INFO 2025-05-26 01:30:35,075 segmentation_utils FCM segmentation completed with 2 clusters
+INFO 2025-05-26 01:30:35,076 segmentation_utils FCM centroids shape: (3, 2)
+INFO 2025-05-26 01:30:35,078 segmentation_utils FCM segmented image unique values: [0 1]
+INFO 2025-05-26 01:30:38,085 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 01:30:38,210 views Automatic segmentation successful with optimal k=2
+INFO 2025-05-26 01:30:38,871 views Result page accessed
+INFO 2025-05-26 01:55:58,182 views Home page accessed
+INFO 2025-05-26 01:57:24,435 views Home page accessed
+INFO 2025-05-26 01:57:25,720 views Home page accessed
+INFO 2025-05-26 01:59:15,804 views Home page accessed
+INFO 2025-05-26 01:59:17,815 views Home page accessed
+INFO 2025-05-26 02:01:31,815 views Home page accessed
+INFO 2025-05-26 02:01:32,999 views Home page accessed
+INFO 2025-05-26 02:01:54,536 views Home page accessed
+INFO 2025-05-26 02:02:06,785 views Image upload received: image satellitaire.png, size: 361176 bytes
+INFO 2025-05-26 02:02:06,786 views Starting automatic segmentation with optimal k detection (in-memory processing)
+INFO 2025-05-26 02:02:06,786 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 02:02:06,830 segmentation_utils Image loaded. Shape: (377, 385, 3), Grayscale: False
+INFO 2025-05-26 02:02:06,831 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 02:02:06,831 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 02:02:08,292 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 02:02:08,293 segmentation_utils Finding optimal k using Silhouette analysis
+INFO 2025-05-26 02:02:32,621 segmentation_utils Silhouette analysis suggests k=2
+INFO 2025-05-26 02:02:32,625 segmentation_utils Finding optimal k using Calinski-Harabasz index
+INFO 2025-05-26 02:02:33,305 segmentation_utils Calinski-Harabasz index suggests k=2
+INFO 2025-05-26 02:02:33,305 segmentation_utils Finding optimal k using Gap statistic
+INFO 2025-05-26 02:02:36,375 segmentation_utils Gap statistic suggests k=2
+INFO 2025-05-26 02:02:36,375 segmentation_utils Finding optimal k using color variance analysis
+INFO 2025-05-26 02:02:36,383 segmentation_utils Variance analysis suggests k=3 (variance: 966.93)
+INFO 2025-05-26 02:02:36,383 segmentation_utils Method suggestions - Elbow: 4, Silhouette: 2, Calinski-Harabasz: 2, Gap: 2, Variance: 3
+INFO 2025-05-26 02:02:36,384 segmentation_utils Final optimal k determined: 2
+INFO 2025-05-26 02:02:36,384 segmentation_utils Method consensus: Elbow=4, Silhouette=2, Calinski=2, Gap=2, Variance=3
+INFO 2025-05-26 02:02:36,385 segmentation_utils Optimal k determined: 2
+INFO 2025-05-26 02:02:37,667 segmentation_utils Starting K-means segmentation with k=2 clusters
+INFO 2025-05-26 02:02:37,937 segmentation_utils K-means segmentation completed with 2 clusters
+INFO 2025-05-26 02:02:37,937 segmentation_utils K-means centroids shape: (2, 3)
+INFO 2025-05-26 02:02:37,938 segmentation_utils K-means segmented image unique values: [0 1]
+INFO 2025-05-26 02:02:38,797 segmentation_utils Starting robust FCM segmentation with k=2 clusters
+INFO 2025-05-26 02:02:39,191 segmentation_utils FCM converged after 19 iterations
+INFO 2025-05-26 02:02:39,197 segmentation_utils Robust FCM segmentation completed with 2 clusters
+INFO 2025-05-26 02:02:39,197 segmentation_utils Membership matrix shape: (2, 145145)
+INFO 2025-05-26 02:02:39,197 segmentation_utils Final centroids shape: (2, 3)
+INFO 2025-05-26 02:02:39,198 segmentation_utils FCM centroids shape: (2, 3)
+INFO 2025-05-26 02:02:39,199 segmentation_utils FCM segmented image unique values: [0 1]
+INFO 2025-05-26 02:02:41,989 segmentation_utils Automatic segmentation process completed successfully
+INFO 2025-05-26 02:02:42,119 views Automatic segmentation successful with optimal k=2 (processed in memory)
+INFO 2025-05-26 02:02:42,825 views Result page accessed
+INFO 2025-05-26 02:03:02,582 views Home page accessed
+INFO 2025-05-26 02:03:39,982 views Home page accessed
+INFO 2025-05-26 02:04:34,918 views Image upload received: NaturalColorImages.jpg, size: 57526 bytes
+INFO 2025-05-26 02:04:34,919 views Starting automatic segmentation with optimal k detection (in-memory processing)
+INFO 2025-05-26 02:04:34,920 segmentation_utils Starting automatic segmentation with optimal k detection
+INFO 2025-05-26 02:04:34,968 segmentation_utils Image loaded. Shape: (501, 501, 3), Grayscale: False
+INFO 2025-05-26 02:04:34,969 segmentation_utils Determining optimal number of clusters using multiple methods
+INFO 2025-05-26 02:04:34,969 segmentation_utils Finding optimal k using improved Elbow method
+INFO 2025-05-26 02:04:36,435 segmentation_utils Elbow method suggests k=4
+INFO 2025-05-26 02:04:36,436 segmentation_utils Finding optimal k using Silhouette analysis

@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}Home - Hybrid Image
+{% extends 'base.html' %} {% block title %}Home - Automatic K-means & FCM Image
 Segmentation{%endblock %} {% block extra_css %}
 <link rel="stylesheet" href="/static/css/style.css" />
 {% endblock %} {% block content %}
@@ -6,31 +6,63 @@ Segmentation{%endblock %} {% block extra_css %}
   <div class="col-md-8">
     <div class="card">
       <div class="card-header">
-        <h4 class="mb-0">Image Segmentation</h4>
+        <h4 class="mb-0">
+          <i class="fas fa-magic"></i> Automatic K-means & FCM Image
+          Segmentation
+        </h4>
       </div>
       <div class="card-body">
         <div class="row mb-4">
           <div class="col-md-12">
             <div class="alert alert-info">
-              <h5>Hybrid Image Segmentation</h5>
+              <h5>
+                <i class="fas fa-robot"></i> Intelligent Automatic Segmentation
+              </h5>
               <p>
-                This application combines K-means and Fuzzy C-means (FCM)
-                clustering algorithms for improved image segmentation. Upload an
-                image to try it out!
+                This application automatically determines the optimal number of
+                regions and performs sequential segmentation:
               </p>
-              <ul>
+              <ol>
                 <li>
-                  <strong>K-means</strong>: Fast but deterministic clustering
+                  <strong>Automatic K Detection</strong>: Uses Elbow Method and
+                  Silhouette Analysis to find optimal number of regions
                 </li>
                 <li>
-                  <strong>FCM (Fuzzy C-means)</strong>: Probabilistic fuzzy
-                  clustering
+                  <strong>K-means Clustering</strong>: Fast initial segmentation
+                  with centroid visualization
                 </li>
                 <li>
-                  <strong>Hybrid</strong>: Combines the speed of K-means with
-                  the refinement of FCM
+                  <strong>FCM Refinement</strong>: Fuzzy C-means applied to
+                  K-means results for improved accuracy
                 </li>
-              </ul>
+                <li>
+                  <strong>Centroid Tracking</strong>: Visual comparison of
+                  centroid positions before and after FCM
+                </li>
+                <li>
+                  <strong>Format Preservation</strong>: RGB images displayed in
+                  color, grayscale images in grayscale
+                </li>
+              </ol>
+              <div class="alert alert-success mt-3 mb-0">
+                <i class="fas fa-lightbulb"></i>
+                <strong>No manual configuration needed!</strong>
+                Just upload your image and let the algorithm automatically
+                determine the best segmentation parameters.
+                <br /><br />
+                <i class="fas fa-rocket"></i>
+                <strong>High Performance:</strong> All processing is done in
+                memory without saving files to disk for optimal deployment
+                performance.
+              </div>
+
+              <div class="alert alert-info mt-3 mb-0">
+                <i class="fas fa-palette"></i>
+                <strong>Want more control?</strong>
+                Try our
+                <a href="/custom-fcm/" class="alert-link">Custom FCM</a>
+                feature where you can provide your own predefined centroids!
+              </div>
             </div>
           </div>
         </div>
@@ -43,7 +75,9 @@ Segmentation{%endblock %} {% block extra_css %}
         >
           {% csrf_token %}
           <div class="mb-4">
-            <label for="image" class="form-label">Select Image</label>
+            <label for="image" class="form-label"
+              ><i class="fas fa-upload"></i> Select Image</label
+            >
             <input
               type="file"
               name="image"
@@ -52,38 +86,44 @@ Segmentation{%endblock %} {% block extra_css %}
               accept="image/*"
               required
             />
-            <div class="form-text">Supported formats: JPG, PNG, BMP</div>
+            <div class="form-text">
+              <i class="fas fa-info-circle"></i> Supported formats: JPG, PNG,
+              BMP (RGB or Grayscale). The algorithm will automatically analyze
+              your image and determine the optimal number of regions.
+            </div>
           </div>
 
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <label for="method" class="form-label">Segmentation Method</label>
-              <select name="method" id="method" class="form-select">
-                <option value="hybrid" selected>Hybrid (K-means + FCM)</option>
-                <option value="kmeans">K-means only</option>
-                <option value="fcm">FCM only</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="n_clusters" class="form-label"
-                >Number of Clusters</label
-              >
-              <input
-                type="number"
-                name="n_clusters"
-                id="n_clusters"
-                class="form-control"
-                min="2"
-                max="10"
-                value="5"
-                required
-              />
-              <div class="form-text">Range: 2-10</div>
+          <div class="alert alert-light">
+            <h6><i class="fas fa-cogs"></i> What happens when you upload:</h6>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-chart-line text-primary"></i> Elbow Method
+                    analysis
+                  </li>
+                  <li>
+                    <i class="fas fa-chart-area text-success"></i> Silhouette
+                    Score analysis
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-crosshairs text-danger"></i> K-means
+                    segmentation
+                  </li>
+                  <li><i class="fas fa-brain text-info"></i> FCM refinement</li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Segment Image</button>
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="fas fa-magic"></i> Start Automatic Segmentation
+            </button>
           </div>
         </form>
       </div>
