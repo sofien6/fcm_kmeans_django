@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block title %}Home - Automatic K-means & FCM Image
-Segmentation{%endblock %} {% block extra_css %}
+{% extends 'base.html' %} {% block title %}Accueil - Segmentation d'Image
+Automatique K-means & FCM{%endblock %} {% block extra_css %}
 <link rel="stylesheet" href="/static/css/style.css" />
 {% endblock %} {% block content %}
 <div class="row justify-content-center">
@@ -7,8 +7,8 @@ Segmentation{%endblock %} {% block extra_css %}
     <div class="card">
       <div class="card-header">
         <h4 class="mb-0">
-          <i class="fas fa-magic"></i> Automatic K-means & FCM Image
-          Segmentation
+          <i class="fas fa-magic"></i> Segmentation d'Image Automatique K-means
+          & FCM
         </h4>
       </div>
       <div class="card-body">
@@ -16,52 +16,55 @@ Segmentation{%endblock %} {% block extra_css %}
           <div class="col-md-12">
             <div class="alert alert-info">
               <h5>
-                <i class="fas fa-robot"></i> Intelligent Automatic Segmentation
+                <i class="fas fa-robot"></i> Segmentation Automatique
+                Intelligente
               </h5>
               <p>
-                This application automatically determines the optimal number of
-                regions and performs sequential segmentation:
+                Cette application détermine automatiquement le nombre optimal de
+                régions et effectue une segmentation séquentielle :
               </p>
               <ol>
                 <li>
-                  <strong>Automatic K Detection</strong>: Uses Elbow Method and
-                  Silhouette Analysis to find optimal number of regions
+                  <strong>Détection Automatique de K</strong> : Utilise la
+                  Méthode du Coude et l'Analyse de Silhouette pour trouver le
+                  nombre optimal de régions
                 </li>
                 <li>
-                  <strong>K-means Clustering</strong>: Fast initial segmentation
-                  with centroid visualization
+                  <strong>Classification K-means</strong> : Segmentation
+                  initiale rapide avec visualisation des centroïdes
                 </li>
                 <li>
-                  <strong>FCM Refinement</strong>: Fuzzy C-means applied to
-                  K-means results for improved accuracy
+                  <strong>Raffinement FCM</strong> : Fuzzy C-means appliqué aux
+                  résultats K-means pour une précision améliorée
                 </li>
                 <li>
-                  <strong>Centroid Tracking</strong>: Visual comparison of
-                  centroid positions before and after FCM
+                  <strong>Suivi des Centroïdes</strong> : Comparaison visuelle
+                  des positions des centroïdes avant et après FCM
                 </li>
                 <li>
-                  <strong>Format Preservation</strong>: RGB images displayed in
-                  color, grayscale images in grayscale
+                  <strong>Préservation du Format</strong> : Images RVB affichées
+                  en couleur, images en niveaux de gris en niveaux de gris
                 </li>
               </ol>
               <div class="alert alert-success mt-3 mb-0">
                 <i class="fas fa-lightbulb"></i>
-                <strong>No manual configuration needed!</strong>
-                Just upload your image and let the algorithm automatically
-                determine the best segmentation parameters.
+                <strong>Aucune configuration manuelle nécessaire !</strong>
+                Téléchargez simplement votre image et laissez l'algorithme
+                déterminer automatiquement les meilleurs paramètres de
+                segmentation.
                 <br /><br />
                 <i class="fas fa-rocket"></i>
-                <strong>High Performance:</strong> All processing is done in
-                memory without saving files to disk for optimal deployment
-                performance.
+                <strong>Haute Performance :</strong> Tout le traitement se fait
+                en mémoire sans sauvegarder de fichiers sur le disque pour une
+                performance de déploiement optimale.
               </div>
 
               <div class="alert alert-info mt-3 mb-0">
                 <i class="fas fa-palette"></i>
-                <strong>Want more control?</strong>
-                Try our
-                <a href="/custom-fcm/" class="alert-link">Custom FCM</a>
-                feature where you can provide your own predefined centroids!
+                <strong>Vous voulez plus de contrôle ?</strong>
+                Essayez notre fonctionnalité
+                <a href="/custom-fcm/" class="alert-link">FCM Personnalisé</a>
+                où vous pouvez fournir vos propres centroïdes prédéfinis !
               </div>
             </div>
           </div>
@@ -76,7 +79,7 @@ Segmentation{%endblock %} {% block extra_css %}
           {% csrf_token %}
           <div class="mb-4">
             <label for="image" class="form-label"
-              ><i class="fas fa-upload"></i> Select Image</label
+              ><i class="fas fa-upload"></i> Sélectionner une Image</label
             >
             <input
               type="file"
@@ -87,34 +90,40 @@ Segmentation{%endblock %} {% block extra_css %}
               required
             />
             <div class="form-text">
-              <i class="fas fa-info-circle"></i> Supported formats: JPG, PNG,
-              BMP (RGB or Grayscale). The algorithm will automatically analyze
-              your image and determine the optimal number of regions.
+              <i class="fas fa-info-circle"></i> Formats supportés : JPG, PNG,
+              BMP (RVB ou Niveaux de gris). L'algorithme analysera
+              automatiquement votre image et déterminera le nombre optimal de
+              régions.
             </div>
           </div>
 
           <div class="alert alert-light">
-            <h6><i class="fas fa-cogs"></i> What happens when you upload:</h6>
+            <h6>
+              <i class="fas fa-cogs"></i> Ce qui se passe quand vous téléchargez
+              :
+            </h6>
             <div class="row">
               <div class="col-md-6">
                 <ul class="list-unstyled">
                   <li>
-                    <i class="fas fa-chart-line text-primary"></i> Elbow Method
-                    analysis
+                    <i class="fas fa-chart-line text-primary"></i> Analyse par
+                    Méthode du Coude
                   </li>
                   <li>
-                    <i class="fas fa-chart-area text-success"></i> Silhouette
-                    Score analysis
+                    <i class="fas fa-chart-area text-success"></i> Analyse du
+                    Score de Silhouette
                   </li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="list-unstyled">
                   <li>
-                    <i class="fas fa-crosshairs text-danger"></i> K-means
-                    segmentation
+                    <i class="fas fa-crosshairs text-danger"></i> Segmentation
+                    K-means
                   </li>
-                  <li><i class="fas fa-brain text-info"></i> FCM refinement</li>
+                  <li>
+                    <i class="fas fa-brain text-info"></i> Raffinement FCM
+                  </li>
                 </ul>
               </div>
             </div>
@@ -122,7 +131,7 @@ Segmentation{%endblock %} {% block extra_css %}
 
           <div class="d-grid gap-2">
             <button type="submit" class="btn btn-primary btn-lg">
-              <i class="fas fa-magic"></i> Start Automatic Segmentation
+              <i class="fas fa-magic"></i> Commencer la Segmentation Automatique
             </button>
           </div>
         </form>

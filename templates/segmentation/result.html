@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block title %}Automatic Segmentation
-Results{%endblock %} {%block extra_css %}
+{% extends 'base.html' %} {% block title %}Résultats de Segmentation
+Automatique{%endblock %} {%block extra_css %}
 <link rel="stylesheet" href="/static/css/style.css" />
 <style>
   .centroid-info {
@@ -55,44 +55,45 @@ Results{%endblock %} {%block extra_css %}
         class="card-header d-flex justify-content-between align-items-center"
       >
         <h4 class="mb-0">
-          <i class="fas fa-magic"></i> Automatic Segmentation Results (k={{ k }}
-          regions)
+          <i class="fas fa-magic"></i> Résultats de Segmentation Automatique
+          (k={{ k }} régions)
         </h4>
         <a href="{% url 'home' %}" class="btn btn-outline-primary btn-sm">
-          <i class="fas fa-upload"></i> Segment Another Image
+          <i class="fas fa-upload"></i> Segmenter une Autre Image
         </a>
       </div>
       <div class="card-body">
         <!-- Image Format Information -->
         <div class="alert alert-info mb-4">
-          <h5><i class="fas fa-info-circle"></i> Image Analysis Summary</h5>
+          <h5>
+            <i class="fas fa-info-circle"></i> Résumé de l'Analyse d'Image
+          </h5>
           <div class="row">
             <div class="col-md-6">
               <p class="mb-1">
-                <strong>Format:</strong> {% if is_grayscale %}Grayscale{% else
-                %}RGB Color{% endif %}
+                <strong>Format :</strong> {% if is_grayscale %}Niveaux de gris{%
+                else %}Couleur RVB{% endif %}
               </p>
               <p class="mb-1">
-                <strong>Optimal Regions:</strong> {{ k }} (automatically
-                detected)
+                <strong>Régions Optimales :</strong> {{ k }} (détectées
+                automatiquement)
               </p>
             </div>
             <div class="col-md-6">
               <p class="mb-1">
-                <strong>Method Consensus:</strong>
-                E:{{ k_analysis_data.elbow_k }}, S:{{
-                k_analysis_data.silhouette_k }}, C:{{ k_analysis_data.calinski_k
-                }}, G:{{ k_analysis_data.gap_k }}, V:{{
-                k_analysis_data.variance_k }}
+                <strong>Consensus des Méthodes :</strong>
+                C:{{ k_analysis_data.elbow_k }}, S:{{
+                k_analysis_data.silhouette_k }}, V:{{ k_analysis_data.variance_k
+                }}
               </p>
               <p class="mb-1">
-                <strong>Agreement Level:</strong>
+                <strong>Niveau d'Accord :</strong>
                 {% if k_analysis_data.suggestion_variance < 1.0 %}
-                <span class="text-success">High</span>
+                <span class="text-success">Élevé</span>
                 {% elif k_analysis_data.suggestion_variance < 2.0 %}
-                <span class="text-warning">Medium</span>
+                <span class="text-warning">Moyen</span>
                 {% else %}
-                <span class="text-danger">Low</span>
+                <span class="text-danger">Faible</span>
                 {% endif %}
               </p>
             </div>
@@ -102,110 +103,29 @@ Results{%endblock %} {%block extra_css %}
         <!-- Step 0: K Analysis -->
         <div class="row mb-5">
           <div class="col-md-12">
-            <span class="step-badge">Step 1</span>
+            <span class="step-badge">Étape 1</span>
             <h5 class="text-info mt-2">
-              <i class="fas fa-chart-line"></i> Automatic K Detection Analysis
+              <i class="fas fa-chart-line"></i> Détection Automatique du Nombre
+              Optimal de Régions
             </h5>
             <div class="text-center mb-3">
               <img
                 src="data:image/png;base64,{{ k_analysis }}"
-                alt="K Analysis Result"
+                alt="Résultat de l'Analyse K"
                 class="result-image"
               />
             </div>
 
             <!-- K Analysis Information -->
             <div class="centroid-info k-analysis">
-              <h6>
-                <i class="fas fa-robot"></i> Advanced Multi-Method K Selection
-                Process
-              </h6>
-              <div class="row">
-                <div class="col-md-4">
-                  <p>
-                    <strong>Elbow Method:</strong> Finds the "elbow" point where
-                    adding clusters provides diminishing returns.
-                  </p>
-                  <p>
-                    <strong>Suggested k:</strong> {{ k_analysis_data.elbow_k }}
-                  </p>
-
-                  <p>
-                    <strong>Silhouette Analysis:</strong> Measures cluster
-                    separation quality.
-                  </p>
-                  <p>
-                    <strong>Suggested k:</strong> {{
-                    k_analysis_data.silhouette_k }}
-                  </p>
-                </div>
-                <div class="col-md-4">
-                  <p>
-                    <strong>Calinski-Harabasz Index:</strong> Evaluates cluster
-                    density and separation.
-                  </p>
-                  <p>
-                    <strong>Suggested k:</strong> {{ k_analysis_data.calinski_k
-                    }}
-                  </p>
-
-                  <p>
-                    <strong>Gap Statistic:</strong> Compares clustering with
-                    random data.
-                  </p>
-                  <p>
-                    <strong>Suggested k:</strong> {{ k_analysis_data.gap_k }}
-                  </p>
-                </div>
-                <div class="col-md-4">
-                  <p>
-                    <strong>Variance Analysis:</strong> Analyzes color
-                    complexity in the image.
-                  </p>
-                  <p>
-                    <strong>Suggested k:</strong> {{ k_analysis_data.variance_k
-                    }}
-                  </p>
-                  <p>
-                    <small class="text-muted"
-                      >Color variance: {{
-                      k_analysis_data.color_variance|floatformat:0 }}</small
-                    >
-                  </p>
-
-                  <p>
-                    <strong>Method Agreement:</strong>
-                    {% if k_analysis_data.suggestion_variance < 1.0 %}
-                    <span class="text-success"
-                      >High ({{
-                      k_analysis_data.suggestion_variance|floatformat:2
-                      }})</span
-                    >
-                    {% elif k_analysis_data.suggestion_variance < 2.0 %}
-                    <span class="text-warning"
-                      >Medium ({{
-                      k_analysis_data.suggestion_variance|floatformat:2
-                      }})</span
-                    >
-                    {% else %}
-                    <span class="text-danger"
-                      >Low ({{ k_analysis_data.suggestion_variance|floatformat:2
-                      }})</span
-                    >
-                    {% endif %}
-                  </p>
-                </div>
-              </div>
               <div class="alert alert-success mt-2 mb-0">
                 <i class="fas fa-check-circle"></i>
-                <strong>Final Decision:</strong> k={{ k }} was selected using
-                weighted consensus from all 5 methods.
-                 {% if k_analysis_data.suggestion_variance > 2.0 %} <br /><small
-                  ><i class="fas fa-info-circle"></i> Due to high disagreement
-                  between methods, a conservative median approach was
-                  used.</small
+                <strong>Nombre Optimal Déterminé :</strong> k={{ k }} régions
+                ont été sélectionnées automatiquement. <br /><small
+                  ><i class="fas fa-info-circle"></i> Basé sur l'analyse de la
+                  Méthode du Coude et de l'analyse de Silhouette pour votre
+                  image.</small
                 >
-                {% endif %}
               </div>
             </div>
           </div>
@@ -214,77 +134,69 @@ Results{%endblock %} {%block extra_css %}
         <!-- Step 1: K-means Results -->
         <div class="row mb-5">
           <div class="col-md-12">
-            <span class="step-badge">Step 2</span>
+            <span class="step-badge">Étape 2</span>
             <h5 class="text-primary mt-2">
-              <i class="fas fa-step-forward"></i> K-means Segmentation with
-              Centroids
+              <i class="fas fa-step-forward"></i> Segmentation K-means
             </h5>
             <div class="text-center mb-3">
               <img
                 src="data:image/png;base64,{{ kmeans_result }}"
-                alt="K-means Segmentation Result"
+                alt="Résultat de Segmentation K-means"
                 class="result-image"
               />
-            </div>
-
-            <!-- K-means Centroids Information -->
-            <div class="centroid-info kmeans-centroid">
-              <h6>
-                <i class="fas fa-crosshairs"></i> K-means Centroids Positions
-              </h6>
-              <div class="centroid-list">
-                {% for centroid in kmeans_centroids %}
-                <div class="centroid-item">
-                  <strong>C{{ forloop.counter }}:</strong> ({{
-                  centroid.0|floatformat:1 }}, {{ centroid.1|floatformat:1 }})
-                </div>
-                {% endfor %}
-              </div>
-              <small class="text-muted"
-                >Red circles (C1, C2, ...) show the center positions of each
-                region after K-means clustering with the automatically
-                determined k={{ k }}.</small
-              >
             </div>
 
             <!-- True Colors vs False Colors Explanation -->
             <div class="alert alert-info mt-3">
               <h6>
-                <i class="fas fa-palette"></i> Understanding True Colors vs
-                False Colors
+                <i class="fas fa-palette"></i> Comprendre les Vraies Couleurs vs
+                les Fausses Couleurs
               </h6>
               <div class="row">
                 <div class="col-md-6">
-                  <p><strong>False Colors (Traditional View):</strong></p>
+                  <p>
+                    <strong>Fausses Couleurs (Vue Traditionnelle) :</strong>
+                  </p>
                   <ul class="small mb-2">
                     <li>
-                      Random colors assigned to each cluster for visualization
+                      Couleurs aléatoires assignées à chaque cluster pour la
+                      visualisation
                     </li>
-                    <li>Good for distinguishing different regions</li>
-                    <li>Colors don't represent actual image content</li>
-                    <li>Standard approach in most segmentation tools</li>
+                    <li>Bon pour distinguer les différentes régions</li>
+                    <li>
+                      Les couleurs ne représentent pas le contenu réel de
+                      l'image
+                    </li>
+                    <li>
+                      Approche standard dans la plupart des outils de
+                      segmentation
+                    </li>
                   </ul>
                 </div>
                 <div class="col-md-6">
-                  <p><strong>True Colors (New Feature):</strong></p>
+                  <p>
+                    <strong>Vraies Couleurs (Nouvelle Fonctionnalité) :</strong>
+                  </p>
                   <ul class="small mb-2">
                     <li>
-                      Each region shows its actual average color (centroid)
+                      Chaque région montre sa couleur moyenne réelle (centroïde)
                     </li>
-                    <li>Colors represent real image content</li>
-                    <li>More intuitive and meaningful visualization</li>
                     <li>
-                      Helps understand what the algorithm actually detected
+                      Les couleurs représentent le contenu réel de l'image
+                    </li>
+                    <li>Visualisation plus intuitive et significative</li>
+                    <li>
+                      Aide à comprendre ce que l'algorithme a réellement détecté
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="alert alert-success mb-0">
                 <small
-                  ><strong>💡 Pro Tip:</strong> The true color view shows you
-                  the actual colors that K-means found as representative of each
-                  region. This gives you insight into the dominant colors in
-                  your image!</small
+                  ><strong>💡 Conseil Pro :</strong> La vue en vraies couleurs
+                  vous montre les couleurs réelles que K-means a trouvées comme
+                  représentatives de chaque région. Cela vous donne un aperçu
+                  des couleurs dominantes dans votre image !</small
                 >
               </div>
             </div>
@@ -294,34 +206,17 @@ Results{%endblock %} {%block extra_css %}
         <!-- Step 2: FCM Results -->
         <div class="row mb-4">
           <div class="col-md-12">
-            <span class="step-badge">Step 3</span>
+            <span class="step-badge">Étape 3</span>
             <h5 class="text-success mt-2">
-              <i class="fas fa-step-forward"></i> FCM Refinement with Centroid
-              Comparison
+              <i class="fas fa-step-forward"></i> Raffinement FCM avec
+              Comparaison de Centroïdes
             </h5>
             <div class="text-center mb-3">
               <img
                 src="data:image/png;base64,{{ fcm_result }}"
-                alt="FCM Segmentation Result"
+                alt="Résultat de Segmentation FCM"
                 class="result-image"
               />
-            </div>
-
-            <!-- FCM Centroids Information -->
-            <div class="centroid-info fcm-centroid">
-              <h6><i class="fas fa-crosshairs"></i> FCM Centroids Positions</h6>
-              <div class="centroid-list">
-                {% for centroid in fcm_centroids %}
-                <div class="centroid-item">
-                  <strong>F{{ forloop.counter }}:</strong> ({{
-                  centroid.0|floatformat:1 }}, {{ centroid.1|floatformat:1 }})
-                </div>
-                {% endfor %}
-              </div>
-              <small class="text-muted"
-                >Blue circles (F1, F2, ...) show the refined center positions
-                after FCM processing.</small
-              >
             </div>
           </div>
         </div>
@@ -329,194 +224,16 @@ Results{%endblock %} {%block extra_css %}
         <!-- Step 3: Detailed Difference Analysis -->
         <div class="row mb-5">
           <div class="col-md-12">
-            <span class="step-badge">Step 4</span>
+            <span class="step-badge">Étape 4</span>
             <h5 class="text-warning mt-2">
-              <i class="fas fa-search"></i> Detailed Difference Analysis
+              <i class="fas fa-search"></i> Analyse Détaillée des Différences
             </h5>
             <div class="text-center mb-3">
               <img
                 src="data:image/png;base64,{{ difference_visualization }}"
-                alt="Detailed Difference Analysis"
+                alt="Analyse Détaillée des Différences"
                 class="result-image"
               />
-            </div>
-
-            <!-- Difference Analysis Information -->
-            <div
-              class="centroid-info"
-              style="background-color: #fff3cd; border-left: 4px solid #ffc107"
-            >
-              <h6>
-                <i class="fas fa-chart-bar"></i> Pixel-Level Change Analysis
-              </h6>
-              <div class="row">
-                <div class="col-md-6">
-                  <p>
-                    <strong>Total Pixel Changes:</strong> {{
-                    change_percentage|floatformat:3 }}% of image
-                  </p>
-                  <p>
-                    <strong>Interpretation:</strong>
-                    {% if change_percentage < 0.1 %}
-                    <span class="text-success"
-                      >Minimal changes - K-means was already very good!</span
-                    >
-                    {% elif change_percentage < 1.0 %}
-                    <span class="text-info"
-                      >Small refinements - FCM made subtle improvements</span
-                    >
-                    {% elif change_percentage < 5.0 %}
-                    <span class="text-warning"
-                      >Moderate changes - FCM provided noticeable
-                      refinement</span
-                    >
-                    {% else %}
-                    <span class="text-danger"
-                      >Significant changes - FCM substantially improved
-                      segmentation</span
-                    >
-                    {% endif %}
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p><strong>What you're seeing:</strong></p>
-                  <ul class="small">
-                    <li>
-                      <strong>Top row:</strong> Side-by-side comparison of
-                      K-means vs FCM
-                    </li>
-                    <li>
-                      <strong>Bottom left:</strong> Difference map (red =
-                      changed pixels)
-                    </li>
-                    <li>
-                      <strong>Bottom right:</strong> FCM result with changes
-                      highlighted
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Process Summary -->
-        <div class="row mt-4">
-          <div class="col-md-12">
-            <div class="alert alert-success">
-              <h5>
-                <i class="fas fa-check-circle"></i> Automatic Segmentation
-                Process Complete
-              </h5>
-              <p>
-                The image has been successfully segmented using our intelligent
-                automatic approach:
-              </p>
-              <ol>
-                <li>
-                  <strong>Advanced K Detection:</strong> Analyzed your image
-                  using 5 different methods: Elbow (k={{ k_analysis_data.elbow_k
-                  }}), Silhouette (k={{ k_analysis_data.silhouette_k }}),
-                  Calinski-Harabasz (k={{ k_analysis_data.calinski_k }}), Gap
-                  Statistic (k={{ k_analysis_data.gap_k }}), and Variance
-                  Analysis (k={{ k_analysis_data.variance_k }}) to determine
-                  optimal k={{ k }} through weighted consensus.
-                </li>
-                <li>
-                  <strong>K-means Initial Segmentation:</strong> Fast clustering
-                  created {{ k }} initial regions with centroids marked in red.
-                </li>
-                <li>
-                  <strong>FCM Refinement:</strong> Fuzzy C-means algorithm
-                  refined the segmentation using K-means results as
-                  initialization.
-                </li>
-                <li>
-                  <strong>Centroid Evolution:</strong> Compare red (K-means) and
-                  blue (FCM) centroids to see how the algorithm improved region
-                  centers.
-                </li>
-              </ol>
-
-              {% if is_grayscale %}
-              <p class="mb-0">
-                <strong>Note:</strong> Original image was grayscale, so results
-                are displayed in grayscale format.
-              </p>
-              {% else %}
-              <p class="mb-0">
-                <strong>Note:</strong> Original image was RGB color, so results
-                preserve the color information.
-              </p>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-
-        <!-- Centroid Movement Analysis -->
-        <div class="row mt-4">
-          <div class="col-md-12">
-            <div class="alert alert-light">
-              <h6>
-                <i class="fas fa-chart-line"></i> Centroid Movement Analysis
-              </h6>
-              <p class="text-muted mb-3">
-                How FCM refined the K-means centroids:
-              </p>
-
-              <!-- Movement Statistics -->
-              <div class="row mb-3">
-                <div class="col-md-12">
-                  <div class="alert alert-info">
-                    <h6>
-                      <i class="fas fa-info-circle"></i> Movement Statistics
-                    </h6>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <strong>Total Movement:</strong> {{
-                        centroid_movement_stats.total_movement|floatformat:2 }}
-                        pixels
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Average Movement:</strong> {{
-                        centroid_movement_stats.average_movement|floatformat:2
-                        }} pixels
-                      </div>
-                      <div class="col-md-4">
-                        <strong>Max Movement:</strong> {{
-                        centroid_movement_stats.max_movement.distance|floatformat:2
-                        }} pixels
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                {% for kmeans_centroid in kmeans_centroids %}
-                <div class="col-md-6 col-lg-4 mb-2">
-                  <div class="card border-0 bg-light">
-                    <div class="card-body p-2">
-                      <small>
-                        <strong>Region {{ forloop.counter }}:</strong><br />
-                        K-means: ({{ kmeans_centroid.0|floatformat:1 }}, {{
-                        kmeans_centroid.1|floatformat:1 }})<br />
-                        FCM: ({{
-                        fcm_centroids|slice:forloop.counter0|slice:":1"|first.0|floatformat:1
-                        }}, {{
-                        fcm_centroids|slice:forloop.counter0|slice:":1"|first.1|floatformat:1
-                        }})<br />
-                        <span class="text-success"
-                          >Movement: {{
-                          centroid_movement_stats.movements|slice:forloop.counter0|slice:":1"|first.distance|floatformat:2
-                          }} pixels</span
-                        >
-                      </small>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
             </div>
           </div>
         </div>
@@ -526,48 +243,44 @@ Results{%endblock %} {%block extra_css %}
           <div class="col-md-12">
             <div class="alert alert-warning">
               <h6>
-                <i class="fas fa-question-circle"></i> Why Do K-means and FCM
-                Results Look Similar?
+                <i class="fas fa-question-circle"></i> Pourquoi les Résultats
+                K-means et FCM se Ressemblent-ils ?
               </h6>
               <p>
-                It's <strong>completely normal</strong> for K-means and FCM
-                segmented images to look identical or very similar. Here's why:
+                Il est <strong>complètement normal</strong> que les images
+                segmentées K-means et FCM semblent identiques ou très
+                similaires. Voici pourquoi :
               </p>
               <ul class="mb-2">
                 <li>
-                  <strong>Good Initial Segmentation:</strong> When K-means
-                  produces a good initial segmentation, FCM refinement may be
-                  minimal.
+                  <strong>Bonne Segmentation Initiale :</strong> Quand K-means
+                  produit une bonne segmentation initiale, le raffinement FCM
+                  peut être minimal.
                 </li>
                 <li>
-                  <strong>Well-Separated Regions:</strong> Images with clear,
-                  distinct regions don't need much refinement.
+                  <strong>Régions Bien Séparées :</strong> Les images avec des
+                  régions claires et distinctes n'ont pas besoin de beaucoup de
+                  raffinement.
                 </li>
                 <li>
-                  <strong>Same Color Mapping:</strong> Both results use the same
-                  color scheme, so subtle pixel changes aren't visually
-                  apparent.
+                  <strong>Même Schéma de Couleurs :</strong> Les deux résultats
+                  utilisent le même schéma de couleurs, donc les changements
+                  subtils de pixels ne sont pas visibles.
                 </li>
                 <li>
-                  <strong>Centroid Refinement:</strong> The main improvement is
-                  in centroid positions (red vs blue circles), not necessarily
-                  pixel assignments.
+                  <strong>Raffinement des Centroïdes :</strong> L'amélioration
+                  principale réside dans les positions des centroïdes, pas
+                  nécessairement dans les assignations de pixels.
                 </li>
               </ul>
-              <div class="alert alert-success mb-0">
-                <strong>Key Insight:</strong> FCM's value lies in providing more
-                accurate centroid positions and handling ambiguous regions
-                better, even when the overall segmentation appears unchanged.
-                Look at the centroid movement statistics above to see the actual
-                improvements!
-              </div>
             </div>
           </div>
         </div>
 
         <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
           <a href="{% url 'home' %}" class="btn btn-primary">
-            <i class="fas fa-magic"></i> Segment Another Image Automatically
+            <i class="fas fa-magic"></i> Segmenter une Autre Image
+            Automatiquement
           </a>
         </div>
       </div>

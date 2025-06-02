@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block title %}Custom FCM with Predefined
-Centroids{% endblock %} {% block extra_css %}
+{% extends 'base.html' %} {% block title %}FCM Personnalisé avec Centroïdes
+Prédéfinis{% endblock %} {% block extra_css %}
 <link rel="stylesheet" href="/static/css/style.css" />
 <style>
   .centroid-input {
@@ -36,27 +36,29 @@ Centroids{% endblock %} {% block extra_css %}
     <div class="card">
       <div class="card-header">
         <h4 class="mb-0">
-          <i class="fas fa-palette"></i> Custom FCM with Predefined Centroids
+          <i class="fas fa-palette"></i> FCM Personnalisé avec Centroïdes
+          Prédéfinis
         </h4>
       </div>
       <div class="card-body">
         <div class="alert alert-info">
-          <h5><i class="fas fa-lightbulb"></i> How it works:</h5>
+          <h5><i class="fas fa-lightbulb"></i> Comment ça fonctionne :</h5>
           <ol>
             <li>
-              <strong>Upload your image</strong> - Any RGB or grayscale image
+              <strong>Téléchargez votre image</strong> - N'importe quelle image
+              RVB ou en niveaux de gris
             </li>
             <li>
-              <strong>Define centroids</strong> - Specify RGB color values for
-              each cluster center
+              <strong>Définissez les centroïdes</strong> - Spécifiez les valeurs
+              de couleur RVB pour chaque centre de cluster
             </li>
             <li>
-              <strong>Run FCM</strong> - The algorithm will refine your
-              centroids and segment the image
+              <strong>Exécutez FCM</strong> - L'algorithme raffinera vos
+              centroïdes et segmentera l'image
             </li>
             <li>
-              <strong>Analyze results</strong> - See how your centroids evolved
-              and view membership uncertainty
+              <strong>Analysez les résultats</strong> - Voyez comment vos
+              centroïdes ont évolué et visualisez l'incertitude d'appartenance
             </li>
           </ol>
         </div>
@@ -67,7 +69,7 @@ Centroids{% endblock %} {% block extra_css %}
           <!-- Image Upload -->
           <div class="mb-4">
             <label for="image" class="form-label">
-              <i class="fas fa-upload"></i> Select Image
+              <i class="fas fa-upload"></i> Sélectionner une Image
             </label>
             <input
               type="file"
@@ -78,7 +80,7 @@ Centroids{% endblock %} {% block extra_css %}
               required
             />
             <div class="form-text">
-              <i class="fas fa-info-circle"></i> Supported formats: JPG, PNG,
+              <i class="fas fa-info-circle"></i> Formats supportés : JPG, PNG,
               BMP
             </div>
           </div>
@@ -86,12 +88,13 @@ Centroids{% endblock %} {% block extra_css %}
           <!-- Centroids Definition -->
           <div class="mb-4">
             <label class="form-label">
-              <i class="fas fa-crosshairs"></i> Define Centroids (RGB Values)
+              <i class="fas fa-crosshairs"></i> Définir les Centroïdes (Valeurs
+              RVB)
             </label>
             <div id="centroids-container">
               <!-- Default centroids -->
               <div class="centroid-input">
-                <label>Centroid 1:</label>
+                <label>Centroïde 1 :</label>
                 <input
                   type="number"
                   class="form-control d-inline-block"
@@ -107,7 +110,7 @@ Centroids{% endblock %} {% block extra_css %}
                   type="number"
                   class="form-control d-inline-block"
                   style="width: 80px"
-                  placeholder="G"
+                  placeholder="V"
                   min="0"
                   max="255"
                   value="0"
@@ -134,12 +137,12 @@ Centroids{% endblock %} {% block extra_css %}
                   type="button"
                   class="btn btn-sm btn-danger ms-2 remove-centroid"
                 >
-                  Remove
+                  Supprimer
                 </button>
               </div>
 
               <div class="centroid-input">
-                <label>Centroid 2:</label>
+                <label>Centroïde 2 :</label>
                 <input
                   type="number"
                   class="form-control d-inline-block"
@@ -155,7 +158,7 @@ Centroids{% endblock %} {% block extra_css %}
                   type="number"
                   class="form-control d-inline-block"
                   style="width: 80px"
-                  placeholder="G"
+                  placeholder="V"
                   min="0"
                   max="255"
                   value="255"
@@ -182,12 +185,12 @@ Centroids{% endblock %} {% block extra_css %}
                   type="button"
                   class="btn btn-sm btn-danger ms-2 remove-centroid"
                 >
-                  Remove
+                  Supprimer
                 </button>
               </div>
 
               <div class="centroid-input">
-                <label>Centroid 3:</label>
+                <label>Centroïde 3 :</label>
                 <input
                   type="number"
                   class="form-control d-inline-block"
@@ -203,7 +206,7 @@ Centroids{% endblock %} {% block extra_css %}
                   type="number"
                   class="form-control d-inline-block"
                   style="width: 80px"
-                  placeholder="G"
+                  placeholder="V"
                   min="0"
                   max="255"
                   value="0"
@@ -230,7 +233,7 @@ Centroids{% endblock %} {% block extra_css %}
                   type="button"
                   class="btn btn-sm btn-danger ms-2 remove-centroid"
                 >
-                  Remove
+                  Supprimer
                 </button>
               </div>
             </div>
@@ -240,66 +243,67 @@ Centroids{% endblock %} {% block extra_css %}
               id="add-centroid"
               class="btn btn-sm btn-success mt-2"
             >
-              <i class="fas fa-plus"></i> Add Centroid
+              <i class="fas fa-plus"></i> Ajouter un Centroïde
             </button>
 
             <div class="form-text">
-              <i class="fas fa-info-circle"></i> Define RGB color values (0-255)
-              for each cluster center. The FCM algorithm will refine these
-              initial positions.
+              <i class="fas fa-info-circle"></i> Définissez les valeurs de
+              couleur RVB (0-255) pour chaque centre de cluster. L'algorithme
+              FCM raffinera ces positions initiales.
             </div>
           </div>
 
           <!-- Preset Buttons -->
           <div class="mb-4">
-            <label class="form-label">Quick Presets:</label><br />
+            <label class="form-label">Préréglages Rapides :</label><br />
             <button
               type="button"
               class="btn btn-sm btn-outline-primary me-2"
               onclick="setPreset('rgb')"
             >
-              RGB Colors
+              Couleurs RVB
             </button>
             <button
               type="button"
               class="btn btn-sm btn-outline-secondary me-2"
               onclick="setPreset('grayscale')"
             >
-              Grayscale
+              Niveaux de Gris
             </button>
             <button
               type="button"
               class="btn btn-sm btn-outline-success me-2"
               onclick="setPreset('nature')"
             >
-              Nature Colors
+              Couleurs Nature
             </button>
             <button
               type="button"
               class="btn btn-sm btn-outline-info"
               onclick="setPreset('satellite')"
             >
-              Satellite Imagery
+              Imagerie Satellite
             </button>
           </div>
 
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary btn-lg">
-            <i class="fas fa-play"></i> Run Custom FCM Segmentation
+            <i class="fas fa-play"></i> Exécuter la Segmentation FCM
+            Personnalisée
           </button>
         </form>
 
         <!-- Loading Indicator -->
         <div class="loading" id="loading">
           <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Processing...</span>
+            <span class="visually-hidden">Traitement...</span>
           </div>
-          <p class="mt-2">Processing image with custom FCM...</p>
+          <p class="mt-2">Traitement de l'image avec FCM personnalisé...</p>
         </div>
 
         <!-- Results Container -->
         <div class="result-container" id="results">
-          <h5><i class="fas fa-chart-line"></i> FCM Results</h5>
+          <h5><i class="fas fa-chart-line"></i> Résultats FCM</h5>
           <div id="result-content"></div>
         </div>
       </div>
@@ -347,15 +351,15 @@ Centroids{% endblock %} {% block extra_css %}
       const newCentroid = document.createElement("div");
       newCentroid.className = "centroid-input";
       newCentroid.innerHTML = `
-    <label>Centroid ${centroidCounter + 1}:</label>
+    <label>Centroïde ${centroidCounter + 1} :</label>
     <input type="number" class="form-control d-inline-block" style="width: 80px;" 
            placeholder="R" min="0" max="255" value="128" data-component="r" data-centroid="${centroidCounter}">
     <input type="number" class="form-control d-inline-block" style="width: 80px;" 
-           placeholder="G" min="0" max="255" value="128" data-component="g" data-centroid="${centroidCounter}">
+           placeholder="V" min="0" max="255" value="128" data-component="g" data-centroid="${centroidCounter}">
     <input type="number" class="form-control d-inline-block" style="width: 80px;" 
            placeholder="B" min="0" max="255" value="128" data-component="b" data-centroid="${centroidCounter}">
     <div class="color-preview" data-centroid="${centroidCounter}" style="background-color: rgb(128,128,128);"></div>
-    <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Remove</button>
+    <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Supprimer</button>
   `;
       container.appendChild(newCentroid);
       centroidCounter++;
@@ -369,7 +373,7 @@ Centroids{% endblock %} {% block extra_css %}
         // Keep at least 2 centroids
         e.target.parentElement.remove();
       } else {
-        alert("You need at least 2 centroids for clustering.");
+        alert("Vous devez avoir au moins 2 centroïdes pour le clustering.");
       }
     }
   });
@@ -419,13 +423,13 @@ Centroids{% endblock %} {% block extra_css %}
       const newCentroid = document.createElement("div");
       newCentroid.className = "centroid-input";
       newCentroid.innerHTML = `
-      <label>Centroid ${index + 1}:</label>
+      <label>Centroïde ${index + 1} :</label>
       <input type="number" class="form-control d-inline-block" style="width: 80px;" 
              placeholder="R" min="0" max="255" value="${
                preset[0]
              }" data-component="r" data-centroid="${index}">
       <input type="number" class="form-control d-inline-block" style="width: 80px;" 
-             placeholder="G" min="0" max="255" value="${
+             placeholder="V" min="0" max="255" value="${
                preset[1]
              }" data-component="g" data-centroid="${index}">
       <input type="number" class="form-control d-inline-block" style="width: 80px;" 
@@ -435,7 +439,7 @@ Centroids{% endblock %} {% block extra_css %}
       <div class="color-preview" data-centroid="${index}" style="background-color: rgb(${
         preset[0]
       },${preset[1]},${preset[2]});"></div>
-      <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Remove</button>
+      <button type="button" class="btn btn-sm btn-danger ms-2 remove-centroid">Supprimer</button>
     `;
       container.appendChild(newCentroid);
       centroidCounter++;
@@ -484,12 +488,12 @@ Centroids{% endblock %} {% block extra_css %}
           if (data.success) {
             displayResults(data);
           } else {
-            alert("Error: " + data.error);
+            alert("Erreur : " + data.error);
           }
         })
         .catch((error) => {
           document.getElementById("loading").style.display = "none";
-          alert("Error: " + error);
+          alert("Erreur : " + error);
         });
     });
 
@@ -503,14 +507,14 @@ Centroids{% endblock %} {% block extra_css %}
         <div class="card border-0 bg-light">
           <div class="card-body p-2">
             <small>
-              <strong>Centroid ${movement.centroid}:</strong><br>
-              Original: [${movement.original
+              <strong>Centroïde ${movement.centroid} :</strong><br>
+              Original : [${movement.original
                 .map((v) => v.toFixed(0))
                 .join(", ")}]<br>
-              Refined: [${movement.refined
+              Raffiné : [${movement.refined
                 .map((v) => v.toFixed(1))
                 .join(", ")}]<br>
-              <span class="text-success">Movement: ${movement.movement.toFixed(
+              <span class="text-success">Mouvement : ${movement.movement.toFixed(
                 2
               )} pixels</span>
             </small>
@@ -526,13 +530,13 @@ Centroids{% endblock %} {% block extra_css %}
     </div>
     
     <div class="alert alert-success">
-      <h6><i class="fas fa-check-circle"></i> Custom FCM Segmentation Complete</h6>
-      <p>Successfully segmented image with ${data.k} custom centroids.</p>
+      <h6><i class="fas fa-check-circle"></i> Segmentation FCM Personnalisée Terminée</h6>
+      <p>Image segmentée avec succès avec ${data.k} centroïdes personnalisés.</p>
     </div>
     
     <div class="row">
       <div class="col-md-12">
-        <h6><i class="fas fa-arrows-alt"></i> Centroid Evolution</h6>
+        <h6><i class="fas fa-arrows-alt"></i> Évolution des Centroïdes</h6>
         <div class="row">
           ${movementsHtml}
         </div>

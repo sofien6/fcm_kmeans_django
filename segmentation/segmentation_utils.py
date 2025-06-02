@@ -709,7 +709,7 @@ def plot_to_base64(fig):
 
 def visualize_k_analysis(k_analysis_data):
     """Visualize the comprehensive k-selection analysis"""
-    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
     
     k_values = k_analysis_data['k_values']
     
@@ -733,37 +733,13 @@ def visualize_k_analysis(k_analysis_data):
     ax2.grid(True, alpha=0.3)
     ax2.legend()
     
-    # Plot Calinski-Harabasz index
-    ax3.plot(k_values, k_analysis_data['calinski_scores'], 'mo-', linewidth=2, markersize=8)
-    ax3.axvline(x=k_analysis_data['calinski_k'], color='red', linestyle='--', alpha=0.7,
-                label=f'Best k={k_analysis_data["calinski_k"]}')
-    ax3.set_xlabel('Number of Clusters (k)', fontsize=11)
-    ax3.set_ylabel('Calinski-Harabasz Score', fontsize=11)
-    ax3.set_title('Calinski-Harabasz Index', fontsize=12, fontweight='bold')
-    ax3.grid(True, alpha=0.3)
-    ax3.legend()
-    
-    # Plot Gap statistic
-    ax4.plot(k_values, k_analysis_data['gap_scores'], 'co-', linewidth=2, markersize=8)
-    ax4.axvline(x=k_analysis_data['gap_k'], color='red', linestyle='--', alpha=0.7,
-                label=f'Best k={k_analysis_data["gap_k"]}')
-    ax4.set_xlabel('Number of Clusters (k)', fontsize=11)
-    ax4.set_ylabel('Gap Statistic', fontsize=11)
-    ax4.set_title('Gap Statistic', fontsize=12, fontweight='bold')
-    ax4.grid(True, alpha=0.3)
-    ax4.legend()
-    
     # Add overall title with consensus information
-    fig.suptitle(f'Comprehensive K-Selection Analysis\n'
-                 f'Methods suggest: Elbow={k_analysis_data["elbow_k"]}, '
-                 f'Silhouette={k_analysis_data["silhouette_k"]}, '
-                 f'Calinski={k_analysis_data["calinski_k"]}, '
-                 f'Gap={k_analysis_data["gap_k"]}, '
-                 f'Variance={k_analysis_data["variance_k"]}',
-                 fontsize=14, fontweight='bold', y=0.98)
+    fig.suptitle(f'K-Selection Analysis\n'
+                 f'Elbow Method suggests k={k_analysis_data["elbow_k"]}, '
+                 f'Silhouette Analysis suggests k={k_analysis_data["silhouette_k"]}',
+                 fontsize=14, fontweight='bold', y=1.02)
     
     plt.tight_layout()
-    plt.subplots_adjust(top=0.90)
     return plot_to_base64(fig)
 
 def visualize_kmeans_result(original_image, segmented_image, centroid_positions, k, is_grayscale, centroids=None):
